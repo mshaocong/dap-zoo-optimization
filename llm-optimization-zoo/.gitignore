@@ -1,0 +1,6 @@
+zollm/
+*.sh
+wandb/
+*.out
+__pycache__/
+.vscode/
