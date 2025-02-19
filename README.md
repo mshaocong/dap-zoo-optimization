@@ -1,4 +1,4 @@
-# Revisiting Zeroth-Order Optimization: Minimum-Variance Two-Point Estimators and Directionally Aligned Perturbations
+# [ICLR 2025 Spotlight] Revisiting Zeroth-Order Optimization: Minimum-Variance Two-Point Estimators and Directionally Aligned Perturbations
 
 This is the source code for our paper [*[ICLR 2025 Spotlight] Revisiting Zeroth-Order Optimization: Minimum-Variance Two-Point Estimators and Directionally Aligned Perturbations*](https://openreview.net/forum?id=ywFOSIT9ik).
 
@@ -73,8 +73,6 @@ Here, we provide the step-by-step instruction to repeat this experiment:
     ```bash
     srun python3 ./zo-bench/run.py --num_virtual_tokens=10 --prompt_init_by_real_tokens --model_name=facebook/opt-1.3b --task_name=SST2 --overwrite_output_dir --no_reparam --num_train_epochs=5 --per_device_train_batch_size=16 --load_best_model_at_end --evaluation_strategy=steps --save_strategy=steps --save_total_limit=1 --eval_steps=1000 --max_steps=20000 --logging_steps=10 --num_eval=1000 --num_train=1000 --num_dev=500 --train_as_classification --perturbation_mode=one_side --trainer=zo_sgd --optimizer=sgd --train_set_seed=0 --lr_scheduler_type=constant --eval_steps=500 --save_steps=500 --learning_rate=1e-4 --weight_decay=0 --zo_eps=1e-5 --perturbation=rademacher
     ```
-
-The training loss will be recorded in the `./zo-bench/results` folder. The training log will be saved in the `./zo-bench/logs` folder. The trained model will be saved in the `./zo-bench/models` folder. The visualization scripts are also provided in `Sythetic-Experiments.ipynb` file.
 
 ## Repeating the Mesh Optimization Experiment
 After installing required packages, run
